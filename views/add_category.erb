@@ -1,0 +1,13 @@
+<body>
+<h1>Add Category to Item</h1>
+
+<form method="post" action="/items/add_category">
+    <input type="hidden" value="<%= id %>" name="id">
+    <select name="id_cat" id="category">
+      <% categories.each do |category| %>
+          <option value="<%= category.id %>"><%= category.name %></option>
+      <% end %>
+    </select>
+    <button type="submit">Add Category</button>
+</form>
+</body>

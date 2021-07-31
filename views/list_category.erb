@@ -1,0 +1,16 @@
+<h1>Daftar Kategori</h1>
+<table>
+  <thead>
+  <th>Category</th>
+  </thead>
+  <tbody>
+  <% category.each do |data| %>
+    <tr>
+      <td><%= data.name %></td>
+      <td><a href="/category/delete/<%= id %>/<%=data.id %>"><button>Delete</button></a></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<a href="/">Return to Home</a>

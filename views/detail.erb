@@ -1,0 +1,11 @@
+<% items.each do |item| %>
+  <h1>Item Detail</h1>
+  <h3>item Name : <%=item.name %></h3>
+  <h3>item price : <%=item.price %></h3>
+<!--  <h3><%#= item.category.to_s.nil? %></h3>-->
+  <% if item.category.to_s.nil? %>
+    <h3>item category : belum diatur</h3>
+  <% else %>
+    <h3>item category : <%=item.category %></h3>
+  <% end %>
+<% end %>

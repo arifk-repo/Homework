@@ -1,0 +1,24 @@
+<h1>Item</h1>
+<table>
+  <thead>
+    <th>Name</th>
+    <th>Price</th>
+  </thead>
+  <tbody>
+  <% item.each do |item| %>
+    <tr>
+      <td><%= item.name %></td>
+      <td><%= item.price %></td>
+      <td><a href="/items/show/<%=item.id %>">Show</a></td>
+      <td><a href="/items/edit/<%=item.id %>">Edit</a></td>
+      <td><a href="/items/add_category/<%=item.id %>">Add Category</a></td>
+      <td><a href="/items/list_category/<%=item.id %>">List Category</a></td>
+      <td><a href="/items/delete/<%=item.id %>"><button>Delete</button></a></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<a href="/items/new">New Item</a>
+<a href="/category/new">New Category</a>
+<a href="/category/">List Category</a>

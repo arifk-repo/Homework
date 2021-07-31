@@ -1,0 +1,11 @@
+<body>
+<h1>Edit Category</h1>
+
+<form method="post" action="/category/update">
+  <% category.each do |data| %>
+  <input type="hidden" name="id" value="<%= data.id %>">
+  <input type="text" name="name" placeholder="<%=data.name %>">
+  <% end %>
+  <button type="submit">Edit</button>
+</form>
+</body>

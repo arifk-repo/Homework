@@ -1,0 +1,24 @@
+<body>
+<h1>Create New Item</h1>
+
+<form method="post" action="/items/edit">
+  <% data.each do |item| %>
+  <input type="hidden" value="<%= item.id %>" name="id">
+  <input name="name" type="text" value="<%= item.name %>">
+  <input name="price" type="number" value="<%= item.price %>">
+  <select name="category" id="category">
+    <% categories.each do |category| %>
+      <% if category.name.to_s!=item.category.to_s %>
+        <option value="<%= category.id %>"><%= category.name %></option>
+      <% else %>
+        <option value="<%= category.id %>" selected><%= category.name %></option>
+      <% end %>
+    <% end %>
+    <% if item.category.to_s.nil? %>
+      <option value="nil" selected>Belum Diatur</option>
+    <% end %>>
+  </select>
+  <button type="submit">Update Item</button>
+  <% end %>
+</form>
+</body>
