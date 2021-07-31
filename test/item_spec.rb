@@ -32,5 +32,12 @@ describe ItemController do
       expected_output = ERB.new(File.read("../views/add_category.erb")).result(binding)
       expect(expected_output).to eq(actual_view)
     end
+
+    it "Add categories" do
+      id=1
+      category_id=1
+      actual_view = @item_controller.add_category(id,category_id)
+      expected_output = Item_categories.save(id, category_id)
+    end
   end
 end
