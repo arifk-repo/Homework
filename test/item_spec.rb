@@ -38,6 +38,14 @@ describe ItemController do
       category_id=1
       actual_view = @item_controller.add_category(id,category_id)
       expected_output = Item_categories.save(id, category_id)
+      expect(expected_output).to eq(actual_view)
+    end
+
+    it "delete item" do
+      id = 9
+      actual_view = @item_controller.delete_item(id)
+      expected_output = Item.delete(id)
+      expect(expected_output).to eq(actual_view)
     end
   end
 end
