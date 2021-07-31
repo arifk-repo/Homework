@@ -44,5 +44,12 @@ describe CategoryController do
       expect(expected).to eq(actual)
     end
 
+    it "Delete Category" do
+      id=7
+      actual = @category_controller.delete_category(id)
+      expected = Category.delete(id)
+      expect(expected).to eq(actual)
+    end
+
   end
 end
