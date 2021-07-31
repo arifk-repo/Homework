@@ -36,5 +36,13 @@ describe CategoryController do
       expect(expected_output).to eq(actual_view)
     end
 
+    it "Update Category" do
+      name = "Traditional"
+      id = 5
+      actual = @category_controller.update_category(id,name)
+      expected = Category.update(id,name)
+      expect(expected).to eq(actual)
+    end
+
   end
 end
