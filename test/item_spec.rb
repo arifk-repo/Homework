@@ -47,5 +47,12 @@ describe ItemController do
       expected_output = Item.delete(id)
       expect(expected_output).to eq(actual_view)
     end
+
+    it "list item by category" do
+      id = 1
+      actual_view = @item_controller.list_item_by_categories(1)
+      expected_output = Item.find_with_category(id)
+      expect(expected_output).to eq(actual_view)
+    end
   end
 end
