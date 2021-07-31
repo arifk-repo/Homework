@@ -16,7 +16,7 @@ describe CategoryController do
       expect(expected_output).to eq(actual_view)
     end
 
-    it "show add form for category" do
+    it "add category" do
       actual_view = @category_controller.add_category
       expected_output = ERB.new(File.read("../views/create.erb")).result(binding)
       expect(expected_output).to eq(actual_view)
